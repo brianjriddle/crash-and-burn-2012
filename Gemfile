@@ -1,0 +1,6 @@
+source "http://rubygems.org"
+gem "showoff"
+gem "thin"
+gem "rmagick"
+gem "pdfkit"
+gem "heroku"
