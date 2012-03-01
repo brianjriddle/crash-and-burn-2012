@@ -58,7 +58,7 @@ Once you have it done locally getting it running in jenkins trivial
 ![cm code coverage](emma-code-coverage-cm.jpg)
 metrics 
 
-.notes legacy code. ours is probably never going to get better than this.
+.notes once you start testing good idea to start collecting metrics. legacy cms code base is probably never going to get better than this.
 Euthanasia only hope for this code base.
 at most we trust this code base 9%.
 depressing but it was &lt;1%
@@ -77,9 +77,16 @@ depressing but it was &lt;1%
 
 http://gist.github.com/320606.js?file=resin-jsp-compile.xml
 
-.notes compiling jsp is just as helpful as compiling java.
+.notes continous building got use a little more stable build but end user were still seeing broken pages
+compiling jsp is just as helpful as compiling java.
 catches missed files, bad syntax, doesn't catch jstl-el though.
 still worth failing the build.
+
+!SLIDE center transition=fade
+![dell gx 260](dell-gx-260.jpg)
+second jenkins server
+
+.notes - every IT department has at least one computer sitting around doing nothing.
 
 !SLIDE bullets center transition=fade
 * deploy till it doesn't hurt (much)
@@ -89,13 +96,6 @@ still worth failing the build.
 Week 2 feature deploy (1 bug fix)
 Week 3 feature deploy (0 bug fixes that couldn't wait)
 then keep doing deploying everyweek.
-
-
-!SLIDE center transition=fade
-![dell gx 260](dell-gx-260.jpg)
-second jenkins server
-
-.notes - every IT department has at least one computer sitting around doing nothing.
 
 !SLIDE center transition=fade
 culture change - it's all about quality
@@ -113,7 +113,7 @@ puts quality first.
 * testing generated html
 * better coverage
 
-.notes greenfield development it is still development. 
+.notes greenfield development is still development. 
 still no ajax
 
 !SLIDE center transition=fade
@@ -122,15 +122,6 @@ still no ajax
 .notes ruby and jruby was gate to faster and happier development
 infrastructure for unit/functional/integration tests.
 we don't brow beat to get better metrics but have tried to nurture a culture of testing
-
-!SLIDE bullets incremental transition=fade
-* what does it cost to deploy?
-* $50 per deploy
-* $100 from tv4 employee(technical)
-* $100 from tv4 employee(nontechnical)
-
-.notes CMS if everything goes ok otherwise start over....
-lots of hand holding.
 
 !SLIDE bullets center transition=fade
 * git push origin master
@@ -154,41 +145,14 @@ this is extremely seductive
 .notes and does it have to be a person that does it can't it happen automatically? 
 this is when we really started making jenkins work hard
 
-!SLIDE bullets center transition=fade
-* CMS
-* redefine deliverables
-* not perfect but good enough
+!SLIDE center
 
-.notes was delivering a VCS tag. had to change to a binary.
-have to draw a line somewhere. 
-stage goes out immediately.
-OBS takes about 30 minutes to do release to stage (20 to prod) and cannot publish during deploy. 
-for a news site that can be a catastrophe.
+![deploy flow](deploy-flow.png)
 
-!SLIDE bullets  transition=fade
-* wordpress
-* define boundaries btwn ops/dev
-* deploy only wp-content
-* it's just php
-
-.notes 300 blogs that use custom wordpress themes. 
-started having all of wordpress in git. 
-made deploys and upgrades hard.  
-cut it down to wp-content and wp-admin that needs to be checked when upgrading wordpress.
-deploys to stage and prod go out within 2 minutes of a commit.
-OBS wordpress one plugin between having not having a site. how safe is that really?
-
-!SLIDE bullets transition=fade
-* mule
-* hot deploy++
-* testing--
-* groovy (testing possible!)
-* deployment service/system dependent
-
-.notes mule ESB.  
-great that you can hot deploy
-after testing with test/unit, rspec, cucumber it just stinks.
-mule some systems just can't be deployed at will.  
+.notes have at least 2 branches for every active project. master is what's in production.
+stage is whats under active development.
+each branch has at least 2 jobs associated with it. one for tests
+one for deploy.
 
 !SLIDE bullets center transition=fade
 * pragmatic programmer
@@ -205,19 +169,9 @@ should be encouraged.
 ![status](status-view-2-640x480.jpg)
 visualizations
 
-.notes it took along time to get a radiator installed and being a tv station we have tons of tvs. 
+.notes it took along time to get a radiator installed and even though we have tv everywhere. 
 everybody in the entire room may not know what those green boxes mean but everybody knows red means
 something broke.
-
-!SLIDE center transition=fade
-![mail](lots-of-mail.jpg)
-mail
-
-.notes only broken or fixed mail
-0 inbox kinda hard w/ 50 mail a day
-easy for developers to ignore a mail.
-we send mail when something breaks or is deploy as that is
-something that should be noticed.
 
 !SLIDE center transition=fade
 ![deploys can be done by anybody](project-manager-deploying.jpg)
@@ -226,14 +180,3 @@ yammer
 .notes we don't have hubot but we do use yammer.
 lots of notifications get pushed to yammer
 
-!SLIDE bullets center transition=fade
-* is it worth it?
-
-.notes it's taken 4 years to get to this point.
-since deploy's are so easy there is no drama and a lot less stress.
-around 1 day a month spent getting various parts working.
-hardest part has been trying to break development down to small deployable bits.
-project managers don't need to plan in deploys in advance b/c it's done all the time.
-
-!SLIDE
-#questions?
