@@ -2,7 +2,7 @@
 the good
 
 !SLIDE bullets
-* less strees
+* less stress
 * no bus factor
 * dev/ops not the obstacle to deploy
 * more resources to development
@@ -28,7 +28,7 @@ most projects &lt; 10 to test and run
 CMS if everything goes ok otherwise start over....
 lots of hand holding.
 
-!SLIDE bullets incremental 
+!SLIDE bullets 
 * what does it cost to deploy everything in production?
 * 2011 3270 deploys $4.66 per deploy
 
