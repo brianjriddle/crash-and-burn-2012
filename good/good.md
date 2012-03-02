@@ -13,7 +13,7 @@ cms took 2 hours to deploy
 
 cms now takes about 25 minutes
 
-most projects &lt; 10 to test and run
+most projects &lt; 10 to test and deploy
 
 .notes quick turn around makes for quick feedback. 
 

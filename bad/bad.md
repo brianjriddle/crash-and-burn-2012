@@ -30,6 +30,8 @@ mule
 
 .notes mule ESB an integration server.  
 great that you can hot deploy but can't deploy everything at will
+like planning system (20 years of tv schedules) or the video archive.
+after testing with test/unit, rspec, cucumber it's way harder than it should be.
 
 !SLIDE center transition=fade
 ![mail](lots-of-mail.jpg)
@@ -37,6 +39,5 @@ great that you can hot deploy but can't deploy everything at will
 .notes only broken or fixed mail
 0 inbox kinda hard w/ 50 mail a day
 easy for developers to ignore a mail.
-we send mail when something breaks or is deploy as that is
+we send mail when something breaks or is deployed as that is
 something that should be noticed.
-after testing with test/unit, rspec, cucumber it's way harder than it should be.
