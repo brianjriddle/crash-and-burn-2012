@@ -1,8 +1,8 @@
 {
     "name": "crash and burn 2012", 
     "sections": [ 
+    {"section":"pre"},
     {"section":"intro"},
-    //    {"section":"quiz"},
     {"section":"tv4"},
     {"section":"good"},
     {"section":"bad"},
